@@ -1,9 +1,17 @@
 package sopra.promo404.formation.model;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Adresse {
+	@Column(name="street")
 	private String rue;
+	@Column(name="ZIP_code")
 	private String codePostal;
+	@Column(name="city")
 	private String ville;
+	@Column(name="country")
 	private String pays;
 
 	public Adresse() {

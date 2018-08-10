@@ -5,11 +5,14 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 @DiscriminatorValue("STUD")
 public class Eleve extends Personne {
 	@Column(name="civility")
+	@Enumerated(EnumType.STRING)
 	private Civilite civilite;
 	@Column(name="birthday")
 	private Date dtNaissance;

@@ -3,18 +3,26 @@ package sopra.promo404.formation.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "training")
+
 public class Formation {
+	@EmbeddedId
 	private FormationId id;
+	@Column(name = "duration")
 	private int duree;
+	@ManyToMany(mappedBy = "subject")
 	private List<Matiere> matieres = new ArrayList<>();
 
 	public Formation() {
 		super();
-	}
-
-	public Formation(String client, String promotion) {
-		super();
-		this.id = new FormationId(client, promotion);
 	}
 
 	public FormationId getId() {

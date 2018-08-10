@@ -1,6 +1,6 @@
 package sopra.promo404.formation.model;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;

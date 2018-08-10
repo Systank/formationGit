@@ -7,8 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name="subject")
 public class Matiere {
@@ -23,7 +26,12 @@ public class Matiere {
 	
 	@Column(name="difficulty")
 	private Difficulte difficulte;
-	@ManyToMany(mappedBy="trainer")
+	@ManyToMany
+	@JoinTable(	name = "TRAINER_SUBJECT", 	
+	joinColumns = @JoinColumn(name = "subject_id"), 
+	inverseJoinColumns = @JoinColumn(name = "trainer_id"), 
+	uniqueConstraints = @UniqueConstraint(columnNames = { "subjet_id", "trainer_id" }))
+	
 	private List<Formateur> formateurs = new ArrayList<>();
 
 	

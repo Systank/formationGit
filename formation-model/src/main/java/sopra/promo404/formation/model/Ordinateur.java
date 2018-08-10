@@ -16,7 +16,7 @@ public class Ordinateur {
 	private int ram;
 	private boolean ssd;
 	@OneToOne
-	@JoinColumn(name="id")
+	@JoinColumn(name="student_id")
 	private Eleve eleve;
 
 	public Ordinateur() {

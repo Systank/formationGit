@@ -10,9 +10,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
 @DiscriminatorValue("STUD")
+@Table(name="student")
 public class Eleve extends Personne {
 	@Column(name="civility")
 	@Enumerated(EnumType.STRING)

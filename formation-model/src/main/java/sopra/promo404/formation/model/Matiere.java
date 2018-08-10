@@ -36,8 +36,10 @@ public class Matiere {
 	private List<Formateur> formateurs = new ArrayList<>();
 
 	
-	public Matiere(Difficulte impossible, String string2, String string) {
+	public Matiere() {
 		super();
+		
+		
 	}
 
 		public Long getId() {

@@ -14,3 +14,5 @@ formation-model/\.classpath
 formation-model/\.project
 
 formation-model/target/
+
+formation-jpa/src/test/java/testjpa/dao/TestDaoPersonne\.java

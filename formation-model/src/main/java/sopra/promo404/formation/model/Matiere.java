@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -24,7 +26,7 @@ public class Matiere {
 	@Column(name="duration")
 	private int duree;
 	
-	@Column(name="difficulty")
+	@Enumerated(EnumType.STRING)
 	private Difficulte difficulte;
 	@ManyToMany
 	@JoinTable(	name = "trainer_subject", 	
@@ -34,7 +36,7 @@ public class Matiere {
 	private List<Formateur> formateurs = new ArrayList<>();
 
 	
-	public Matiere() {
+	public Matiere(Difficulte impossible, String string2, String string) {
 		super();
 	}
 

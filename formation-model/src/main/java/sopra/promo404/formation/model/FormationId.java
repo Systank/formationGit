@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+
+
 @SuppressWarnings("serial")
 @Embeddable
 public class FormationId implements Serializable {
@@ -72,4 +74,7 @@ public class FormationId implements Serializable {
 		return true;
 	}
 
-}
+
+	}
+
+

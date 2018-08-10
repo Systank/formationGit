@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -18,7 +19,8 @@ public class Eleve extends Personne {
 	private Civilite civilite;
 	@Column(name="birthday")
 	private Date dtNaissance;
-	@Column(name="provider")
+	@ManyToOne
+	@JoinColumn(name="STU_TRAINER_ID")
 	private Formateur formateur;
 	@OneToOne
 	@JoinColumn(name="code")

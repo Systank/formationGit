@@ -5,10 +5,23 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+@Entity
+@Table(name="trainer")
+@DiscriminatorValue("TRAI")
 public class Formateur extends Personne {
+	@Column(name="referent")
 	private boolean referent;
+	@Column(name="experience")
 	private int experience;
+	@OneToMany(mappedBy = "student")
 	private List<Eleve> eleves = new ArrayList<>();
+	@ManyToMany(mappedBy="subject")
 	private Set<Matiere> matieres = new HashSet<>();
 
 	public Formateur() {

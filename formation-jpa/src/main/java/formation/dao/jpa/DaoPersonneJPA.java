@@ -1,4 +1,4 @@
-package formation.jpa.dao;
+package formation.dao.jpa;
 
 public class DaoPersonneJPA {
 

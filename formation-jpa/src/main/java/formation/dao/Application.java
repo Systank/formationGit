@@ -1,4 +1,4 @@
-package formation.jpa;
+package formation.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,23 +1,13 @@
 package formation.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class Application {
 	private static Application instance = null;
 
-	private String jdbcUrl = "jdbc:postgresql://localhost:5432/formation-jpa";
-	private String jdbcUser = "postgres";
-	private String jdbcPassword = "admin";
-
-	private Application() {
-		try {
-			Class.forName("org.postgresql.Driver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("formation");
+	
 
 	public static Application getInstance() {
 		if (instance == null) {
@@ -27,7 +17,9 @@ public class Application {
 		return instance;
 	}
 
-	public Connection createConnection() throws SQLException {
-		return DriverManager.getConnection(jdbcUrl, jdbcUser, jdbcPassword);
+	public EntityManagerFactory getEmf() {
+		return emf;
 	}
+	
+	
 }

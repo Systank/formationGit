@@ -14,7 +14,6 @@ import javax.persistence.Table;
 
 @Entity
 @DiscriminatorValue("STUD")
-@Table(name="student")
 public class Eleve extends Personne {
 	@Column(name="civility")
 	@Enumerated(EnumType.STRING)

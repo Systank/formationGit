@@ -15,18 +15,17 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "training")
-
 public class Formation {
+	
 	@EmbeddedId
 	private FormationId id;
 	@Column(name = "duration")
 	private int duree;
 	@ManyToMany
-	@JoinTable(name = "TRAINING_SUBJECT", 
-	joinColumns = @JoinColumn(name = "trainer_id"), 
+	@JoinTable(name = "training_subject", 
+	joinColumns = {@JoinColumn(name = "training_customer", referencedColumnName="customer"), @JoinColumn(name="training_promotion", referencedColumnName="promotion")}, 
 	inverseJoinColumns = @JoinColumn(name = "subject_id"), 
-	uniqueConstraints = @UniqueConstraint(columnNames = {
-			"trainer_id", "subject_id" }))
+	uniqueConstraints = @UniqueConstraint(columnNames = {"training_customer","training_promotion", "subject_id" }))
 	private List<Matiere> matieres = new ArrayList<>();
 
 	public Formation() {

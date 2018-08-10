@@ -17,7 +17,7 @@ import javax.persistence.UniqueConstraint;
 public class Matiere {
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name="SUBJ_ID")
 	private Long id;
 	@Column(name="name")
 	private String nom;
@@ -27,11 +27,10 @@ public class Matiere {
 	@Column(name="difficulty")
 	private Difficulte difficulte;
 	@ManyToMany
-	@JoinTable(	name = "TRAINER_SUBJECT", 	
+	@JoinTable(	name = "trainer_subject", 	
 	joinColumns = @JoinColumn(name = "subject_id"), 
 	inverseJoinColumns = @JoinColumn(name = "trainer_id"), 
-	uniqueConstraints = @UniqueConstraint(columnNames = { "subjet_id", "trainer_id" }))
-	
+	uniqueConstraints = @UniqueConstraint(columnNames = { "subject_id", "trainer_id" }))
 	private List<Formateur> formateurs = new ArrayList<>();
 
 	

@@ -23,8 +23,7 @@ public class Eleve extends Personne {
 	@ManyToOne
 	@JoinColumn(name="STU_TRAINER_ID")
 	private Formateur formateur;
-	@OneToOne
-	@JoinColumn(name="code")
+	@OneToOne(mappedBy = "eleve")
 	private Ordinateur ordinateur;
 
 	public Eleve() {
